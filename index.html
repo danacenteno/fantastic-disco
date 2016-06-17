@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="styles/styles.css">
+	<link href='https://fonts.googleapis.com/css?family=Righteous|Roboto:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="styles/animate.css">
+	<title>Astro-Wingmate!</title>
+</head>
+<body>
+	<header id="#home">
+		<h1>Astro-Wingmate</h1>
+		<div class="wrapper">
+			<div class="headerContainer">
+				<p>Love astronomy? Love cheesy pickup lines? Well, you're in luck! Thanks to this little guy, you'll get all that in one place! Click below to discover more!</p>
+				<img src="images/astronaut_alt.png" alt="An animated illustration of an astronaut floating in space" class="floating">
+			</div>
+		</div>
+		
+		<a href="#location"><button class="start">Here We Go!</button></a>
+	</header>
+
+	<main>
+		<section id="location" class="geoLookUp">
+			<div class="wrapper">
+				<form action="" id="postalRequest">
+					<label for="postalCode">
+					<p>So, where are you right now?</p>
+					<input type="text" placeholder="Enter Your Postal Code!" class="postal">
+					</label>
+				</form>
+			</div>
+		</section>
+
+		<section id="astronomyStuff" class="astroInfo hideMe">
+			<p class="location"><span class="city">{City}</span><span class="province">{province}</p>
+			<div class="wrapper">
+				<div class="column1">
+					<div class="temp-text">
+						<p class="temp_c">{temperature}</p>
+						<p class="smallText">Temperature (&deg;C)</p>
+					</div>
+					<div class="time-text">
+						<p class="time"><span class="hours">{hour}</span><span class="minutes">{minutes}</span></p>
+						<p class="smallText">Moonrise</p>
+					</div>
+				</div>
+
+				<div class="column2">
+					<div class="moonAnimate"></div>
+					<div class="phase-text">
+						<p class="moonPhase">{Moon Phase}</p>
+						<p class="smallText">Moon Phase</p>
+					</div>
+				</div>
+
+				<div class="column3">
+					<div class="visibility-text">
+						<p class="illumination">{Illuminate Percent}</p>
+						<p class="smallText">Visibility</p>
+					</div>
+					<div class="conditions">
+						<p class="skyCon">{Sky Conditions}</p>	
+						<p class="smallText">Sky Conditions</p>
+					</div>
+				</div>
+			</div>
+			<a href="#pickUpLines"><button class="pickUpButton"> Sweet! Give Me A Line!</button></a>
+		</section>
+
+		<section id="pickUpLines" class="pickUps hideMe">
+			<div class="wrapper">
+				<p>{random pickup}</p>
+				<a href="#home"><button class="restart">Give me another one!</button></a>
+			</div>
+		</section>
+	</main>
+
+	<footer>
+		<p>Designed, Illustrated & Coded with &hearts; by Dana Centeno</p>
+		<p>App idea by the amazing <a href="http://www.hellomkreyes.com/">MK Reyes</a></p>
+		<p>Powered by <a href="https://www.wunderground.com/weather/api/d/docs?MR=1">The Wunderground API</a></p>
+	</footer>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="js/astro2.js"></script>
+	<script src="js/jquery.smooth-scroll.js"></script>
+	<script src="js/konami.js"></script>
+	
+	<!-- KONAMI CODE GOODNESS -->
+	<script>
+		var easter_egg = new Konami('easterEgg.html');
+	</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>SPACE SLOTH!!!!</title>
+
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		header {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-self: flex-end;
+			margin: auto;
+		}
+
+		.headerVideo {
+			display: block;
+			position: fixed;
+		    bottom: 0px;
+		    right: 0px;
+		    min-width: 100%;
+		    min-height: 100%;
+		    width: auto;
+		    height: auto;
+		    z-index: -1000;
+		    overflow: hidden;
+		    background-attachment: fixed;
+		}
+
+		.goBack {
+			width: 70%;
+			margin: 0 auto;
+		}
+
+		.goBack h1 {
+			padding: 40px;
+			font-size: 50px;
+			font-family: helvetica,arial,sans-serif;
+			text-align: center;
+			color: black;
+			position: relative;
+			top: 450px;
+			background: rgba(255,255,255,0.5);
+			border-radius: 50px;
+		}
+
+		.goBack a {
+			text-decoration: none;
+		}
+	</style>
+</head>
+<body>
+	<video src="video/slothsInSpace.mp4" class="headerVideo" loop autoplay></video>
+
+	<header>
+		<div class="goBack">
+			<a href="index.html"><h1>Go Back To Astro-Wingmate!</h1></a>
+		</div>
+	</header>
+</body>
+</html>
