@@ -20,24 +20,19 @@ astroApp.init = function(){
 	    console.log(postal);
 	    // reveals astromony info once users' postal code is submitted
 
-	    if( 'input' === null){
-	    	alert('Sorry, that is not a valid postal code.');
-	    } 
-	    else {
-
-	    }
-
-
-	    $('.astroInfo').removeClass('hideMe').addClass("showMe");
-
-	    // Can't seem to figure out how to prevent function above from running if user presses "submit" without writing a postal code. 
-
-	    // The astronomy info (with placeholder text) just pops up. O___o
-
-	    // if user do not enter a proper postal code, fields below won't show! 
+	    // if postal code info is not submitted, you'll get an alert and .astroInfo won't show!
+	    if( $('#postalInfo').val().length === 0 ) {
+	            alert('Sorry, that is not a valid postal code!');
+	            // console.log('DENIEEEDDD!!!')
+	        }
+	        else {
+	        	// when postal code entered, .astroInfo will show up!
+	        	$('.astroInfo').removeClass('hideMe').addClass('showMe');
+	        	// console.log('IT WOOOORKSSS!!!');
+	        }
 	});
 
-	var easter_egg = new Konami('../easterEgg.html');
+	var easter_egg = new Konami('easterEgg.html');
 	console.log(easter_egg);
 };
 
@@ -135,8 +130,12 @@ astroApp.displayInfo = function(moon,skycon){
 	$('.pickUps p').text(pickUps[randomPickUps]);
 
 	// will randomly generate a pick up line when button is clicked
-	$('.pickUpButton').on('click', function(){
+	$('.pickUpButton').on('click', function(e){
+		e.preventDefault();
 		$('.pickUps').removeClass('hideMe').addClass("showMe");
+		$.smoothScroll({
+			scrollTarget: "#pickUpLines"
+		});
 	});
 };
 
@@ -154,17 +153,11 @@ $(function(){
 		});
 	});
 
+	// When postal code submitted, it will smoothscroll to astronomy info!
 	$('form').on('submit', function(e){
 		e.preventDefault();
 		$.smoothScroll({
 			scrollTarget: "#astronomyStuff"
-		});
-	});
-
-	$('button.pickUpButton').on('click', function(e){
-		e.preventDefault();
-		$.smoothScroll({
-			scrollTarget: "#pickUpLines"
 		});
 	});
 
@@ -174,11 +167,4 @@ $(function(){
 		scrollTarget: "body"
 		});
 	});
-
-	// $('').on('click' function(){
-	// 	e.preventDefault();
-	// 	$.smoothScroll({
-	// 		scrollTarget: "#pickUpLines"
-	// 	});
-	// });
 });
